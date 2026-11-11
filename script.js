@@ -89,8 +89,19 @@ function viewProduct(id){
     addToCart(id);
     bootstrap.Modal.getOrCreateInstance($("detailsModal")).hide();
   };
+$("detailOrder").onclick=()=>{
+    addToCart(id);
 
-  bootstrap.Modal.getOrCreateInstance($("detailsModal")).show();
+    bootstrap.Modal.getOrCreateInstance(
+        $("detailsModal")
+    ).hide();
+
+    setTimeout(()=>{
+        bootstrap.Modal.getOrCreateInstance(
+            $("cartModal")
+        ).show();
+    },400);
+};
 }
 
 /* CART FUNCTIONS */
