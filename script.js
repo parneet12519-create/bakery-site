@@ -62,9 +62,21 @@ function displayProducts(){
           <p>${p.description}</p>
           <div class="product-price">${rupees(p.price)}</div>
           <div class="product-buttons">
-            <button class="btn btn-outline-bakery" onclick="viewProduct(${p.id})">Details</button>
-            <button class="btn btn-bakery" onclick="addToCart(${p.id})">Add to Cart</button>
-          </div>
+    <button class="btn btn-outline-bakery"
+        onclick="viewProduct(${p.id})">
+        Details
+    </button>
+
+    <button class="btn btn-bakery"
+        onclick="addToCart(${p.id})">
+        Add to Cart
+    </button>
+
+    <button class="btn btn-bakery"
+        onclick="orderNow(${p.id})">
+        Order Now
+    </button>
+</div>
         </div>
       </div>
     </div>
@@ -118,7 +130,13 @@ function addToCart(id){
   displayCart();
   toast(p.name+" added to cart!");
 }
+function orderNow(id) {
+    addToCart(id);
 
+    bootstrap.Modal.getOrCreateInstance(
+        $("cartModal")
+    ).show();
+}
 function addCustomItem(item){
   cart.push({
     id:Date.now(),
