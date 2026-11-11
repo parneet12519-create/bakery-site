@@ -100,3 +100,21 @@ body.dark-mode .contact-section{background:var(--bg)}
 body.dark-mode .topbar{background:#20171b}
 @media(max-width:900px){.shop-tools{grid-template-columns:1fr}.filters{justify-content:flex-start}.hero-img{height:350px}}
 @media(max-width:600px){.hero{padding:45px 0}.hero-img{height:280px}.section{padding-top:55px;padding-bottom:55px}.form-card{padding:20px}.tracking-form{flex-direction:column}.gallery-img{height:150px}.product-img-wrap{height:190px}.chat-panel{right:15px;bottom:80px}.chat-launcher{right:15px}}
+.admin-profile {
+  background: #fff3e8;
+  border: 1px solid #e8c5a8;
+}
+
+.admin-avatar {
+  font-size: 45px;
+  color: #9b573b;
+}
+
+.admin-profile h5 {
+  color: #713d2b;
+  font-weight: 700;
+}
+
+.admin-profile p {
+  color: #704b3c;
+}
