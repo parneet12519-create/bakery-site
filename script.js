@@ -327,7 +327,7 @@ function confirmOrder(){
   localStorage.setItem("sc_orders",JSON.stringify(orders));
 
   $("orderConfirmation").innerHTML=
-    "Your demo order is confirmed!<br>Order ID: <strong>"+orderId+"</strong><br>Save this ID to track your order.";
+    "Your order is confirmed!<br>Order ID: <strong>"+orderId+"</strong><br>Save this ID to track your order.";
   $("orderConfirmation").classList.remove("d-none");
 
   cart=[];
@@ -344,7 +344,7 @@ function confirmOrder(){
   $("couponMessage").textContent="";
 
   displayAdmin();
-  toast("Demo order confirmed!");
+  toast("order has been placed successfully!");
 }
 
 function trackOrder(event){
@@ -387,7 +387,7 @@ function displayAdmin(){
           `<option ${s===o.status?"selected":""}>${s}</option>`).join("")}
       </select>
     </div>
-  `).join("") : "<p>No demo orders available.</p>";
+  `).join("") : "<p>No orders available.</p>";
 }
 
 function changeOrderStatus(id,status){
@@ -423,7 +423,7 @@ function chatbotAnswer(message){
   }
 
   if(q.includes("track")||q.includes("order id")){
-    answer="To track your order, confirm a demo order in your cart. Copy the Order ID shown after confirmation and enter it in the Track Order section.";
+    answer="To track your order, confirm a order in your cart. Copy the Order ID shown after confirmation and enter it in the Track Order section.";
   }
 
   if(q.includes("gift")){
@@ -478,7 +478,7 @@ function toggleTheme(){
 
 function submitContact(event){
   event.preventDefault();
-  $("contactFeedback").textContent="Thank you! Your demo enquiry has been submitted.";
+  $("contactFeedback").textContent="Thank you! Your enquiry has been submitted.";
   $("contactForm").reset();
 }
 
@@ -507,7 +507,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
   // Cart and wishlist
   $("applyCoupon").addEventListener("click",applyCoupon);
-  $("confirmOrder").addEventListener("click",confirmOrder);
+  $("placeOrder").addEventListener("click",confirmOrder);
   $("cartIsGift").addEventListener("change",function(){
     $("cartGiftFields").classList.toggle("d-none",!this.checked);
     displayCart();
